@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Site controller Built off of HUD GamePad Base, and ThreeJS Interactive for NodeJS -->
+  <meta charset="UTF-8">
+<title>controller</title>
+</head>
+<body>
+  <div id="controller">
+    <iframe>
+      <script type="text/javascript">
+import { createStore } from 'redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+
+import rootReducer from './reducers'
+
+const persistConfig = {
+      key: 'root',
+      storage,
+}
+
+const persistedReducer = persistReducer( persistConfig, rootReducer)
+
+export default() => {
+  let store = createStore( persistedReducer)
+  let persistor = persistStore(store)
+  return { store , persistor }
+}
+
+import { PersistGate } from 'redux-persist/integration/react'
+
+const App = () = {
+  
+  return (
+    <Provider store={ store }>
+     <PersistGate loading={ null } persistor={ persistor }>
+      <RootComponent/>
+     </PersistGate>
+    </Provider>
+    );
+};
+
+import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  stateReconciler: hardSet,
+}
+
+import { combineReducers } from 'redux'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+
+import { authReducer, otherReducer } from './reducers'
+
+const rootPersistConfig = {
+  key: 'root',
+  storage: storage,
+  blacklist: ['auth']
+  whitelist: ['cache']
+}
+
+const authPersistConfig = {
+  key: 'auth',
+  storage: storage,
+  blacklist: ['cache']
+  
+}
+
+const cachePersistConfig = {
+  key: 'cache',
+  storage: storage,
+  whitelist: ['auth']
+  
+}
+
+const rootReducer = combineReducers({
+  auth: persistReducer(authPersistConfig, authReducer),
+  cache: persistReducer(cachePersistConfig,
+  otherReducer),
+  other: otherReducer,
+})
+
+export default persistReducer( rootPersistConfig, rootReducer)
+
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import firebase from 'firebase/app'
+/*** firebase provider store and props config ***/
+import 'firebase/auth'
+
+import { createStore, combineReducers, compose } from 'redux'
+import { ReactReduxFirebaseProvider, firebaseReducer } from 'react-redux-firebase'
+
+const fbConfig = {}
+
+const rrfConfig = {
+  userProfile: 'users'
+}
+
+firebase.initializeApp(fbConfig)
+
+const rootReducer = combineReducers({
+  firebase.firebaseReducer
+})
+
+const initialState = {}
+const store = createStore( rootReducer, initialState)
+
+const rrfProps = {
+  firebase,
+  config: rrfConfig,
+  dispatch: store.dispatch
+}
+
+function App(){
+  return(
+    <Provider store={store}>
+     <ReactReduxFirebaseProvider {...rrfProps}>
+       <Todos />
+     </ReactReduxFirebaseProvider>
+    </Provider>
+    )
+}
+
+render(<App />, document.getElementById('root'))
+
+import React from 'react'
+import { useFirebase } from 'react-redux-firebase'
+
+export default Function Todos(){
+  const firebase = useFirebase()
+  
+  Function addSampleTodo(){
+    const templateTodo = {
+      text: 'template', done: false 
+    } return firebase.push('todos', templateTodo)
+  } return (
+    <div>
+     <h1>New To-do Object</h1>
+      <button onClick={addSampleTodo}>Add</button>
+    </div>
+    )
+  
+}
+
+/*** firebaseMount and Unmount objectives ***/
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
+import { useFirebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
+
+export default Function Todos(){
+  useFirebaseConnect(['todos'])
+  
+  const todos = useSelector((state) => state.firebase.ordered.todos)
+  
+  if(!isLoaded(todos)){
+    return  <div>Loading...</div>
+  }
+  
+  if(!isEmpty(todos)){
+    return  <div>Task List is Empty</div>
+  } return (
+    <div>
+     <ul>
+      { Object.keys (todos).map((key, id) => ( <TodoItem key={key} id={id} todo={todos[key]}/>
+      )) }
+     </ul>
+    </div>
+    )
+ 
+}
+
+/*** firebaseConnect implementation ***/
+
+
+import { createTransform } from 'redux-persist'
+
+const SetTransform = createTransform(
+  
+  (inboundState, key) => {
+    return { ...inboundState, mySet:[...inboundState.mySet] };
+  },
+  (outboundState, key) => {
+    return {...outboundState, mySet: new Set(outboundState.mySet) };
+  },
+  {whitelist: ['rootReducer', 'authReducer', 'otherReducer']}
+  );
+  
+  export default SetTransform;
+  
+  import storage from 'redux-persist/lib/storage'
+  import { SetTransform } from './transforms'
+  
+  const persistConfig = {
+    key: 'root',
+    storage: storage,
+    transforms: [ SetTransform ]
+  };
+  
+var ProgressHUD = require('react-native-progress-hud');
+var components = React.createClass({
+  mixins: [ProgressHUD.Mixin],
+  
+  render(){
+    return(
+      <View>
+        <ProgressHUD
+           isVisible={this.state.is_hud_visible}
+           isDismissible={true}
+           overlayColor="rgba(0,0,0,0.11)"/>
+      </View>
+    );
+  }
+  
+ this.showProgressHUD();
+ var childComponentHUD = React.createClass{
+  render(){
+    contextTypes:{
+      showProgressHUD: React.PropTypes.func,
+      dismissProgressHUD: React.PropTypes.func
+    }
+    return(
+      <View>
+        <TouchableHighlight
+         onPress={this.context.showProgressHUD}>Show Progress HUD </TouchableHighlight>
+      </View>
+      );
+  }
+  import HUD, { LoadingHUD } from 'react-native-hud-hybrid'
+  
+  text(){
+    HUD.text('Initializing HUD Overlay Screening :: ...');
+    HUD.text('Loading Crypto-Securities Landing :: ...');
+     }
+  };
+  const HudAi = require('hud-ai');
+  const client = HudAi.create({
+    clientId: 'CLIENT_ID',
+    redirectUri: 'https://omnipuppyxx.web.app'
+  });
+  window.location = client.getAuthorizeUri('token');
+  const queryString = require('query-string');
+  const parsed = queryString.parse(location.hash);
+  client.setAccessToken(parsed.access_token);
+  
+  client.articles.get('index.html').then(article => console.log(article)).catch(err => console.log('IOException Logged :: ...', err));
+  
+})
+
+        const GamePad = require('GamePad');
+        
+        GamePad.setup({
+          start: true({name: "start", "key": "b"}),
+          select: true({name: "select", "key":"v"}),
+          joystick: true,
+          trace: true,
+          debug: true,
+          hidden: false,
+          canvas: [
+            "game"],
+          buttons: [
+            {name: "a", "key": "s"},
+            {name: "b", "key": "a"},
+            {name: "x", "key": "w"},
+            {name: "y", "key": "q"}
+            ]
+        });
+        multikey.setup(GamePad.events, "qwasbv", true),
+        GamePad.setup()
+        setInterval(
+          Function(){
+            
+            var map = GamePad.observe();
+            console.log(new Date() + ":" + JSON.stringify(map))
+            
+          }, 1000);
+          Function draw(){
+            if(GamePad){
+              gamepad(GamePad.observe())
+            }
+          }
+          GamePad.on('a') => {
+            set();
+            get();
+          }
+          GamePad.on('b') => {
+   set();
+            get();
+          }
+          GamePad.on('x') => {
+   set();
+            get();
+          }
+          GamePad.on('y') => {
+   set();
+            get();
+          }
+          GamePad.on('start') => {
+   set();
+            get();
+          }
+          GamePad.on('select') => {
+   set();
+            get();
+          }
+  GamePad.joystick.cursor = 'pointer';
+  joystick.on('click', Function(event){
+   set();
+            get();
+  });
+  joystick.on('touchstart', Function(event){
+   set();
+            get();
+  });
+  joystick.on('touchcancel', Function(event){
+   set();
+            get();
+  });
+  joystick.on('touchmove', Function(event){
+   set();
+            get();
+  });
+  joystick.on('touchend', Function(event){
+   set();
+            get();
+  });
+  joystick.on('mousedown', Function(event){
+   set();
+            get();
+  });
+  joystick.on('mouseout', Function(event){
+   set();
+            get();
+  });
+  joystick.on('mouseover', Function(event){
+   set();
+            get();
+  });
+  joystick.on('mousemove', Function(event){
+   set();
+            get();
+  });
+  joystick.on('mouseup', Function(event){
+   set();
+            get();
+  });
+  
+import { scene, PerspectiveCamera, WebGLRenderer, Mesh, BoxGeometry, MeshBasicMaterial } from 'three';
+import { Interaction } from 'three.interaction';
+
+const renderer = new WebGLRenderer({ canvas: canvasElement });
+const scene = new scene();
+const camera = new PerspectiveCamera( 60, width / height, 0.1 , 100 );
+
+const interaction = new Interaction( renderer , scene , camera );
+
+const cube = new Mesh(
+          new BoxGeometry(1,1,1),
+          New MeshBasicMaterial({ color: 0xffffff }),
+  );
+  
+  scene.add(cube);
+  scene.add(GamePad);
+  scene.add(multikey);
+  
+  cube.cursor = 'pointer';
+  cube.on('click', Function(event){get();set();});
+  cube.on('touchstart', Function(event){get();set();});
+  cube.on('touchcancel', Function(event){get();set();});
+  cube.on('touchmove', Function(event){get();set();});
+  cube.on('touchend', Function(event){get();set();});
+  cube.on('mousedown', Function(event){get();set();});
+  cube.on('mouseout', Function(event){get();set();});
+  cube.on('mouseover', Function(event){get();set();});
+  cube.on('mousemove', Function(event){get();set();});
+  cube.on('mouseup', Function(event){get();set();});
+  
+  scene.on('touchstart', event =>{
+    
+            .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+  
+scene.on('touchmove', event =>{
+         
+      .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+         
+         console.log(event);
+    
+  })
+scene.on('touchcancel', event =>{
+    
+       .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+scene.on('touchend', event =>{
+    
+      .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+scene.on('mousedown', event =>{
+    
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+scene.on('mouseover', event =>{
+    
+      .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+scene.on('mouseup', event =>{
+    
+       .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+scene.on('mouseout', event =>{
+    
+       .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+       
+         console.log(event);
+    
+  })
+  const { joystick } = const class joystick(){}
+  const class joystick = new class(){}
+ class joystick(event){
+    
+set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+  }
+  
+const class mouseout = new class(){}
+ class mouseout(event){
+    
+set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+  }
+  
+const class mousedown = new class(){}
+ class mousedown(event){
+    
+set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+  }
+const class mouseover  = new class(){}
+ class  mouseover(event){
+    
+ set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+  }
+  
+const class mouseout = new class(){}
+ class mouseout(event){
+ set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+  }
+  
+const class mouseup = new class(){}
+ class mouseup(event){
+set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+    
+  }
+const class touchend = new class(){}
+ class touchend(event){
+ set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+  }
+const class touchstart = new class(){}
+ class touchstart(event){
+ set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+  }
+  
+const class touchcancel = new class(){}
+ class touchcancel(event){
+set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+    
+  }
+const class touchmove = new class(){}
+ class touchmove(event){
+set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+  }
+  const { buttonsA } = const GamePad.buttons[{"a"}];
+  const class buttonA = new const buttonsA;
+  class buttonA(){
+ set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+   
+  }
+  
+const { buttonB } = const GamePad.buttons[{"b"}];
+  const class buttonB = new const buttonsB;
+  class buttonB(){
+ set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+  }
+  
+const { buttonX } = const GamePad.buttons[{"x"}];
+  const class buttonX = new const buttonsX;
+  class buttonX(){
+ set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+  }
+const { buttonY } = const GamePad.buttons[{"y"}];
+  const class buttonY = new const buttonsY;
+  class buttonY(){
+ set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+  }
+  
+scene.on('joystick', event =>{
+    
+      .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+  
+scene.on('buttonY', event =>{
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+        
+        
+         console.log(event);
+    
+  })
+scene.on('buttonX', event =>{
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+    
+         console.log(event);
+    
+  })
+scene.on('buttonA', event =>{
+    
+      .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+scene.on('buttonB', event =>{
+      .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+       
+       
+         console.log(event);
+    
+  })
+scene.on('start', event =>{
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+    
+         console.log(event);
+    
+  })
+scene.on('select', event =>{
+    
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+  scene.on('PerspectiveCamera', event =>{
+    
+           .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+    
+         console.log(event);
+    
+  })
+  const { camera } = const PerspectiveCamera ;
+  const class cameraInteractive = new const camera;
+  class cameraInteractive(){
+     
+     set();
+     
+     .componentDidMount(){
+       get();
+     }
+     .componentDidUpdate(){
+       
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       
+        @Override
+     
+     }
+    
+  }
+  
+  import * as THREE from 'three'
+  import { ObjectControls } from 'threejs-object-controls'
+ const var controls = new ObjectControls( camera, renderer.domElement, myMesh);
+  
+controls.setDistance(8,200);
+controls.setZoomSpeed(1);
+controls.disableZoom();
+controls.enableZoom();
+controls.setObjectToMove(newMesh);
+controls.setRotationSpeed(0.05);
+controls.setRotationSpeedTouchDevices(value);
+controls.enableVerticalRotation();
+controls.disableHorizontalRotation();
+controls.setMaxVerticalRotationAngle(Math.PI / 4, Math.PI / 4);
+controls.setMaxHorizontalRotationAngle(R,R);
+controls.disableMaxHorizontalAngleRotation();
+controls.disableMaxVerticalAngleRotation();
+
+controls(get();set();){
+  get(*);
+     
+     .componentDidMount(controls(*)){
+       get(*);
+controls.setDistance(get());
+controls.setZoomSpeed(get());
+controls.disableZoom(get());
+controls.enableZoom(get());
+controls.setObjectToMove(newMesh);
+controls.setRotationSpeed(get());
+controls.setRotationSpeedTouchDevices(value);
+controls.enableVerticalRotation(get());
+controls.disableHorizontalRotation(get());
+controls.setMaxVerticalRotationAngle(Math.PI / 4, Math.PI / 4);
+controls.setMaxHorizontalRotationAngle(R(get()),R(get()));
+controls.disableMaxHorizontalAngleRotation(get());
+controls.disableMaxVerticalAngleRotation(get());
+
+     @Override 
+     .componentDidUpdate(){ 
+       this.context(new){
+controls.setDistance().value().eval(get());
+controls.setZoomSpeed().value().eval(get());
+controls.disableZoom().value().eval(get());
+controls.enableZoom().value().eval(get());
+controls.setObjectToMove(newMesh);
+controls.setRotationSpeed().value().eval(get());
+controls.setRotationSpeedTouchDevices(value);
+controls.enableVerticalRotation().value().eval(get());
+controls.disableHorizontalRotation().value().eval(get());
+controls.setMaxVerticalRotationAngle(Math.PI / 4, Math.PI / 4);
+controls.setMaxHorizontalRotationAngle(R().value().eval(get());,R().value().eval(get()););
+controls.disableMaxHorizontalAngleRotation().value().eval(get());
+controls.disableMaxVerticalAngleRotation().value().eval(get());
+       for(controls(*).value(new).eval(get(this) => {
+           controls(this).value(eval()).setValue(new this.value())
+           })
+       };
+       
+      }
+     
+     }
+     .componentWillUnmount(){}
+     .render(WebGLRenderer){
+       canvas.canvasElement(controls(*).value(eval)).do{
+         draw(){ 
+           interaction.render(camera, renderer, myMesh, contols(*).value(eval))
+         };
+         
+       }.exec(this);
+        
+     
+     }
+    
+  }
+  module.exports(this)
+  
+}
+      </script>
+    </iframe>
+  </div>
+</body>
