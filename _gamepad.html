@@ -202,6 +202,88 @@ const SetTransform = createTransform(
     transforms: [ SetTransform ]
   };
   
+    /*** LoadData onClick ***/
+  
+  import { useSelector } from 'react-redux'
+  import { useFirebase, isLoaded, isEmpty } from 'react-redux-firebase'
+  
+  Function TodosList(){
+    const todos = useSelector((state) => state.firebase.ordered.todos)
+    if(!isLoaded(todos)){
+      return <div>Loading...</div>
+    }
+    if(isEmpty(todos)){
+      return <div>Task List is Empty...</div>
+    }
+    return(
+      <ul>
+        { Object.keys(todos).map((key, id) => (<TodoItem key={key} id={id} todo={todos[key]} />)) }
+      </ul>
+      )
+  }
+  export default Function Todos(){
+    const firebase = useFirebase()
+    
+    return(
+      <div>
+        <h1>Task List</h1>
+          <EnhancedTodosList/>
+          <button onClick={() => firebase.watchEvent('value', 'todos')}>Load Task List</button>
+      </div>
+      
+      console.log('react redux firebase: ' , window.ReactReduxFirebase)
+  }
+  
+  /*** firestore inclusion ***/ 
+  import { render } from 'react-dom'
+  import { Provider } from 'react-redux'
+  import firebase from 'firebase/app'
+  import 'firebase/auth'
+  import 'firebase/firestore'
+  
+  import { createStore, combineReducers, compose } from 'redux'
+  import { ReactReduxFirebaseProvider, firebaseReducer } from 'react-redux-firebase'
+  import { createFirestoreInstance, firestoreReducer } from 'redux-firestore'
+  
+  const firebaseConfig = {}
+  
+  const rrfConfig = {
+    userProfile: 'users'
+  }
+  
+  firebase.initializeApp(firebaseConfig)
+  
+  firebase.firestore()
+  
+  const rootReducer = combineReducers({
+    firebase: firebaseReducer,
+    firestore: firestoreReducer
+  })
+  
+  const initialState = {}
+  
+  const store = createStore(rootReducer, initialState)
+  
+  const rrfProps = {
+    firebase,
+    config: rrfConfig,
+    dispatch: store.dispatch,
+    createFirestoreInstance
+  }
+  
+  Function App(){
+    return(
+      <Provider store={store}>
+       <ReactReduxFirebaseProvider {...rrfProps}>
+       <Todos />
+      </ReactReduxFirebaseProvider>
+     </Provider>
+      )
+  }
+  render(<App />, document.getElementById('root'))
+  
+  
+  
 var ProgressHUD = require('react-native-progress-hud');
 var components = React.createClass({
   mixins: [ProgressHUD.Mixin],
@@ -271,7 +353,7 @@ var components = React.createClass({
             ]
         });
         multikey.setup(GamePad.events, "qwasbv", true),
-        GamePad.setup()
+        
         setInterval(
           Function(){
             
@@ -286,23 +368,38 @@ var components = React.createClass({
           }
           GamePad.on('a') => {
             set();
-            get();
+            get(buttons.onClick("s", const class buttonsA(true)) => {
+              this.exec();
+              
+            }).listen()
           }
           GamePad.on('b') => {
    set();
-            get();
+            get(buttons.onClick("a", const class buttonsB(true)) => {
+              this.exec();
+              
+            }).listen());
           }
           GamePad.on('x') => {
    set();
-            get();
+            get(buttons.onClick("w", const class buttonsX(true)) => {
+              this.exec();
+              
+            }).listen());
           }
           GamePad.on('y') => {
    set();
-            get();
+            get(buttons.onClick("q", const class buttonsY(true)) => {
+              this.exec();
+              
+            }).listen());
           }
           GamePad.on('start') => {
    set();
-            get();
+            get(start.onClick( const {start}(true)) => {
+              this.exec();
+              
+            }).listen());
           }
           GamePad.on('select') => {
    set();
@@ -487,8 +584,21 @@ set();
        get();
      }
      .componentDidUpdate(){
+       get(){
+         
        
-     }
+       joystick.onClick('Left', => { 
+         cursor.Left(-2,1,1)).listen(true) }
+       joystick.onClick('Right', => {
+       cursor.Right(+2,1,1)).ltrue.listen(true) }
+       joystick.onClick('Up', => { 
+         cursor.Up(value().eval(), +1, 1)).listen(true) }
+       joystick.onClick('Down', => {
+         cursor.Down(value().eval(), -1, 1)).listen(true) }
+       return(eval().listen(onClick(true)))
+       }
+       return get(eval().listen(onClick(joystick, true) while(!<SIGTERM>).exec(*);
+       }
      .componentWillUnmount(){}
      .render(WebGLRenderer){
        
@@ -528,7 +638,7 @@ set();
        get();
      }
      .componentDidUpdate(){
-       
+controls.enableVerticalRotation(eval(),1--,eval());
      }
      .componentWillUnmount(){}
      .render(WebGLRenderer){
@@ -587,7 +697,7 @@ set();
        get();
      }
      .componentDidUpdate(){
-       
+controls.enableVerticalRotation(eval(),1++,eval());
      }
      .componentWillUnmount(){}
      .render(WebGLRenderer){
@@ -618,8 +728,9 @@ const class touchend = new class(){}
     
     
   }
-const class touchstart = new class(){}
- class touchstart(event){
+  const {start} = const class start();
+const class start= new class(){}
+ class start(event){
  set();
      
      .componentDidMount(){
@@ -761,10 +872,18 @@ scene.on('joystick', event =>{
       .render(WebGLRenderer){
        
         @Override
-     
+      joystick.onClick(cursor.Left, => {
+        scene.cube.Mesh(BoxGeometry(eval(--), eval(), eval()))
      }
-    
-    
+joystick.onClick(cursor.Right, => {
+        scene.cube.Mesh(BoxGeometry(eval(++), eval(), eval()))
+     }
+joystick.onClick(mouseup, => {
+        scene.cube.Mesh(BoxGeometry(eval(), eval(++), eval()))
+     }
+joystick.onClick(mousedown, => {
+        scene.cube.Mesh(BoxGeometry(eval(--), eval(), eval()))
+     }
          console.log(event);
     
   })
@@ -773,7 +892,9 @@ scene.on('buttonY', event =>{
      .render(WebGLRenderer){
        
         @Override
-     
+     class buttonY(){
+       
+      }
      }
     
         
@@ -785,7 +906,9 @@ scene.on('buttonX', event =>{
      .render(WebGLRenderer){
        
         @Override
-     
+     class buttonX(){
+       
+     }
      }
     
     
@@ -798,7 +921,9 @@ scene.on('buttonA', event =>{
       .render(WebGLRenderer){
        
         @Override
-     
+     class buttonA(){
+       
+     }
      }
     
     
@@ -809,7 +934,9 @@ scene.on('buttonB', event =>{
       .render(WebGLRenderer){
        
         @Override
+     class buttonB(){
      
+     }
      }
     
        
@@ -817,11 +944,16 @@ scene.on('buttonB', event =>{
          console.log(event);
     
   })
-scene.on('start', event =>{
+scene.on({start} | const start(onClick(true)), event =>{
      .render(WebGLRenderer){
        
         @Override
-     
+      {start.onClick(start(true))}.render(<div><TD align="Vertical"><TR><button onClick={}>Account</button></TR><TR>
+      <button onClick={}>Payment</button></TR><TR>
+      <button onClick={}>Profile</button></TR><TR>
+      <button onClick={}>Save</button></TR><TR>
+      <button onClick={}>Stats</button></TR><TR>
+      <button onClick={}>Addons</button></TR></TD></div>)
      }
     
     

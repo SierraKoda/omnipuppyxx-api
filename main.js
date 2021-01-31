@@ -232,7 +232,808 @@ client.on('data', (data) => {
     const table = [];
     const table.push([ a[0]: 1, b[0]: '.to', c[0]: '.from', d[0]: '.usage', e[0]: '.src', f[0]: '.instanceOf', g[0]: '.eventTrigger',  h[0]: '{debugger}', i[0]: '.extends', j[0]: '.function(call)', k[0]: '.obj_core', l[0]: '.sourcemap', m[0]: '.host', n[0]: '.hostname', o[0]: '.init', p[0]: '.resourceDirectory', q[0]: '.user', r[0]: '.cdt()',  s[0]: '.build_pipeline', t[0]: '.linklist', u[0]: '.bitlinker', v[0]: '.kubernete_cluster', w[0]: '.parseInt[{data}]', x[0]: '.uint16array', y[0]: '.base64string', z[0]: '.root', a[1]: '.threadedTasks', b[1]: '.event', c[1]: '.domTypes', d[1]: '.alphaTrigger', e[1]: '.firestore', f[1]: '.filestore', g[1]: '.fcm_message', h[1]: '.FCM_Token', i[1]: '.xCompiler', j[1]: '.api_key', k[1]: '.API_Token', l[1]:'.localstorage', m[1]:'.pushdata(link)', n[1]:'.neuralnetwork',o[1]:'.node_sector', p[1]:'.kube_application', q[1]:'main.app'
   , r[1]: '.appInstance', s[1]: '.observable', t[1]:'.username', u[1]:'.auth', v[1]: '.listeningService', w[1]:'.serviceWorker',x[1]:'.runningthreads(__count__)',y[1]:'.logcat', z[1]:'.SEIM', a[2]:'.timer', b[2]:'.runtime(completion)', c[2]: '.server', d[2]: '.port', e[2]: '.stream', f[2]:'.foo', g[2]:'#bar', h[2]:'#FCM_DataMessage', i[2]:'.fetch', j[2]:'.cloud_firebase_app', k[2]:'.document.env', l[2]:'.iObservable', m[2]:'.thisDisplayName()', n[2]:'.eval', o[2]:'.enum', p[2]:'{ interface }',q[2]:'.last_build', r[2]:'.service_agents', s[2]:'.render()', t[2]:'.objects',u[2]:'.exceptionHandler', [2]:'.IOException', w[2]:'.token', x[2]:'.token_cdt', y[2]:'.automation', z[2]:'.alert', a[3]:'.cycle', b[3]:'.StopIteration', c[3]:'.Iteration', d[3]:'.Prototype', e[3]:'.protocol', f[3]:'.void', g[3]:'.channel', h[3]:'.IO', i[3]:'.createWriteStream', j[3]:'.stream', k[3]:'.logger', l[3]:'.console', m[3]:'.subscription', n[3]:'.physics', o[3]:'.database', p[3]:'.strictEqual', q[3]:'.req(res)', r[3]:'.assert', s[3]:'.active', t[3]:'.securities', u[3]:'.!err', v[3]: '.app', x[3]: '.running', y[3]: '.running.ttl', z[3]:'.thread']);
+  const class consoleSwitch = { 
+    class k[0-3]((k[3]) =>{
+      this.load();
+while(!<SIGTERM/>){
+  this.exec(*) for (console.log().value().eval() == !null).do{ return { value().stringify() };
+    
+  }.exec(this).listen(true || <SIGTERM/>)
+}
+    })
+    this.context(const table[*]);
+    switch: {
+    
+    case (a[0-3]): Function(new class a[this]),
+    case (b[0-3]): Function(new class b[this]),
+    case (c[0-3]): Function(new class c[this]),
+case (d[0-3]): Function(new class d[this]),
+    case (e[0-3]): Function(new class e[this]),
+    case (f[0-3]): Function(new class f[this]),
+    case (g[0-3]): Function(new class g[this]),
+    case (h[0-3]): Function(new class h[this]),
+    case (i[0-3]): Function(new class i[this]),
+    case (j[0-3]): Function(new class j[this]),
+    case (k[0-3]): Function(new class k[this]),
+    case (l[0-3]): Function(new class l[this]),
+case (m[0-3]): Function(new class m[this]),
+    case (n[0-3]): Function(new class n[this]),
+    case (o[0-3]): Function(new class o[this]),
+    case (p[0-3]): Function(new class p[this]),
+    case (q[0-3]): Function(new class q[this]),
+    case (r[0-3]): Function(new class r[this]),
+    case (s[0-3]): Function(new class s[this]),
+    case (t[0-3]): Function(new class t[this]),
+    case (u[0-3]): Function(new class u[this]),
+case (v[0-3]): Function(new class v[this]),
+    case (w[0-3]): Function(new class w[this]),
+    case (x[0-3]): Function(new class x[this]),
+case (y[0-3]): Function(new class y[this]),
+    case (z[0-3]): Function(new class z[this]),
+    default: Function default,
+    class a[0-3]{
+      
+      if(a[0]){
+        console.log('1')
+        this.value() = return 1;
+        
+      }
+      else if(a[1]){
+        /*** insert .threadedTasks object ***/
+        console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else if(a[2]){
+        /*** insert .timer object ***/
+console.log('.timer')
+        this.value() = return('.timer').stringify();
+      }
+      else if(a[3]){
+        /*** insert runtime .cycle object ***/
+console.log('.cycle')
+        this.value() = return('.cycle').stringify();
+      }
+      else{}
+      
+    }
+class b[0-3]{
   
+if(b[0]){
+  /*** to object instance ***/
+console.log('.to')
+        this.value() = return('.to').stringify();
+}
+      else if(b[1]){
+        /*** event instance object ***/
+console.log('.event')
+        this.value() = return('.event').stringify();
+      }
+      else if(b[2]){
+        /*** runtime completion object in milliseconds ***/
+console.log('.runtime(completion)')
+        this.value() = return('.runtime(completion)').stringify();
+        
+      }
+      else if(b[3]){
+        /*** iteration kill sigterm ***/
+console.log('.stopIteration')
+        this.value() = return('.stopIteration').stringify();
+        
+      }
+      else{}
+      
+      
+}
+class c[0-3]{
+  
+if(c[0]){
+  /*** from host runtime object ***/
+console.log('.from')
+        this.value() = return('.from').stringify();
+  
+}
+      else if(c[1]){
+        /*** domTypes object handler ***/
+        
+console.log('.domTypes')
+        this.value() = return('.domTypes').stringify();
+      }
+      else if(c[2]){
+        /*** server alternating switch object***/
+console.log('.server')
+        this.value() = return('.server').stringify();
+      }
+      else if(c[3]){
+        /*** iteration constraints and Data streaming ***/
+console.log('.Iteration')
+        this.value() = return('.Iteration').stringify();
+        
+      }
+      else{}
+      
+}
+class d[0-3]{
+if(d[0]){
+  /*** IRC usage channel object pipeline***/
+console.log('.usage')
+        this.value() = return('.usage').stringify();
+}
+      else if(d[1]){
+        /*** CodeDOM Event Trigger Primary ***/
+console.log('.alphaTrigger')
+        this.value() = return('.alphaTrigger').stringify();
+        
+      }
+      else if(d[2]){
+        /*** IOPort Stream Socket ***/
+console.log('.port')
+        this.value() = return('.port').stringify();
+      }
+      else if(d[3]){
+        /*** Render Machine Prototype Instance Container ***/
+console.log('.Prototype')
+        this.value() = return('.Prototype').stringify();
+      }
+      else{}
+      
+  
+}
+class e[0-3]{
+if(e[0]){
+  /*** source code choreography symlinker ***/
+console.log'.src')
+        this.value() = retur'.src').stringify();
+  
+}
+      else if(e[1]){
+        /*** firestoreConnect and headlining source module ***/
+      
+console.log('.firestore')
+        this.value() = return('.firestore').stringify();
+        import { render } from 'react-dom'
+  import { Provider } from 'react-redux'
+  import firebase from 'firebase/app'
+  import 'firebase/auth'
+  import 'firebase/firestore'
+  
+  import { createStore, combineReducers, compose } from 'redux'
+  import { ReactReduxFirebaseProvider, firebaseReducer } from 'react-redux-firebase'
+  import { createFirestoreInstance, firestoreReducer } from 'redux-firestore'
+  
+  const firebaseConfig = {}
+  
+  const rrfConfig = {
+    userProfile: 'users'
+  }
+  
+  firebase.initializeApp(firebaseConfig)
+  
+  firebase.firestore()
+  
+  const rootReducer = combineReducers({
+    firebase: firebaseReducer,
+    firestore: firestoreReducer
+  })
+  
+  const initialState = {}
+  
+  const store = createStore(rootReducer, initialState)
+  
+  const rrfProps = {
+    firebase,
+    config: rrfConfig,
+    dispatch: store.dispatch,
+    createFirestoreInstance
+  }
+  
+  Function App(){
+    return(
+      <Provider store={store}>
+       <ReactReduxFirebaseProvider {...rrfProps}>
+       <Todos />
+      </ReactReduxFirebaseProvider>
+     </Provider>
+      )
+  }
+  render(<App />, document.getElementById('root'))
+  
+      }
+      else if(e[2]){
+        /*** stream config ***/
+console.log('.stream')
+        this.value() = return('.stream').stringify();
+      }
+      else if(e[3]){
+        /*** rule set protocols and standard integration template***/
+console.log('.protocol')
+        this.value() = return('.protocol').stringify();
+        
+      }
+      else{}
+      
+  
+}
+class f[0-3]{
+  
+if(f[0]){
+  /*** instantiation article ***/
+console.log('.instanceOf')
+        this.value() = return('.instanceOf').stringify();
+}
+      else if(f[1]){
+        /*** filestore storage parser ***/
+console.log('.filestore')
+        this.value() = return('.filestore').stringify();
+        
+      }
+      else if(f[2]){
+        /*** foo object glob config ***/
+console.log('.foo')
+        this.value() = return('.foo').stringify();
+      }
+      else if(f[3]){
+        /*** void class instance recognition ***/
+console.log('.void')
+        this.value() = return('.void').stringify();
+        
+      }
+      else{}
+      
+}
+class g[0-3]{
+  
+if(g[0]){
+  /*** trigger system for function objects ***/
+console.log('.eventTrigger')
+        this.value() = return('.eventTrigger').stringify();
+  
+}
+      else if(g[1]){
+        /*** firebaseCloud Message Compatriate Handler***/
+console.log('.fcm_message')
+        this.value() = return('.fcm_message').stringify();
+        
+      }
+      else if(g[2]){
+        /*** function(#bar){} object***/
+console.log('#bar')
+        this.value() = return('#bar').stringify();
+        
+      }
+      else if(g[3]){
+        /*** irc stream channel for uint16array host studio.h proxy ***/
+console.log('.channel')
+        this.value() = return('.channel').stringify();
+      }
+      else{}
+      
+}
+class h[0-3]{
+if(h[0]){
+  /*** debugger virtualization compliance protocol ***/
+console.log('{debugger}')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(h[1]){
+        /*** tokenizer instance for FCM_Glob ***/
+console.log('.FCM_Token')
+        this.value() = return('.FCM_Token').stringify();
+        
+      }
+      else if(h[2]){
+        /*** FCM_Glob Handler Protocol ***/
+console.log('.FCM_DataMessage')
+        this.value() = return('.FCM_DataMessage').stringify();
+        
+      }
+      else if(h[3]){
+        /*** STDIO.h Variable Recognition Object ***/
+console.log('.IO')
+        this.value() = return('.IO').stringify();
+      }
+      else{}
+      
+  
+}
+class i[0-3]{
+  
+if(i[0]){
+  /*** Object Class Inherited Usage Extension ***/
+console.log('.extends')
+        this.value() = return('.extends').stringify();
+}
+      else if(i[1]){
+        /*** Cross Compiler Access Object ***/
+console.log('.xCompiler')
+        this.value() = return('.xCompiler').stringify();
+      }
+      else if(i[2]){
+        /*** Object .fetch Call AJAX or MOCKJAX ***/
+console.log('.fetch')
+        this.value() = return('.fetch').stringify();
+        
+      }
+      else if(i[3]){
+        /*** fsWriteStream createStream Object ***/
+console.log('.createWriteStream')
+        this.value() = return('.createWriteStream').stringify();
+        
+      }
+      else{}
+      
+}
+class j[0-3]{
+if(j[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(j[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(j[2]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+        
+      }
+      else if(j[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+        
+      }
+      else{}
+      
+  
+}
+class k[0-3]{
+  
+if(k[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(k[1]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(k[2]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(k[3]){
+        
+console.log('.logger')
+        this.value() = return('.logger').stringify();
+        var express = require('express')                           var fs = require('fs')
+var morgan = require('morgan')                             var path = require('path')
+
+var app = express()
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+                                                           // setup the logger
+app.use(morgan('combined', { stream: accessLogStream }))   
+app.get('/', function (req, res) {                           res.send(console.log().value(*).eval(*))
+})                
+                             
+      }
+      else{}
+      
+}
+class l[0-3]{
+  
+if(l[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(l[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(l[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(l[3]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+}
+class m[0-3]{
+if(m[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(m[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(m[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(m[3]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+  
+}
+class n[0-3]{
+if(n[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(n[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(n[2]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+        
+      }
+      else if(n[3]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+  
+}
+class o[0-3]{
+  
+if(o[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(o[1]){
+        
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else if(o[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(o[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+}
+class p[0-3]{
+if(p[0]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(p[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(p[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(p[3]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+  
+}
+class q[0-3]{
+if(q[0]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(q[1]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+        
+      }
+      else if(q[2]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(q[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+        
+      }
+      else{}
+      
+  
+}
+class r[0-3]{
+if(r[0]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+  
+}
+      else if(r[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else if(r[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(r[3]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+  
+}
+class s[0-3]{
+if(s[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(s[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(s[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(s[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+  
+}
+class t[0-3]{
+  
+if(t[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(t[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(t[2]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+        
+      }
+      else if(t[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+}
+class u[0-3]{
+  
+if(u[0]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(u[1]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(u[2]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(u[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+}
+class v[0-3]{
+  
+if(v[0]){
+  
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+}
+      else if(v[1]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(v[2]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(v[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+}
+class w[0-3]{
+  
+if(w[0]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(w[1]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else if(w[2]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(w[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+}
+class x[0-3]{
+  
+if(x[0]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(x[1]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(x[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else if(x[3]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else{}
+      
+}
+class y[0-3]{
+if(y[0]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(y[1]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(y[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else if(y[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else{}
+      
+  
+}
+class z[0-3]{
+  
+if(z[0]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+  
+}
+      else if(z[1]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else if(z[2]){
+        
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+      }
+      else if(z[3]){
+console.log('.threadedTasks')
+        this.value() = return('.threadedTasks').stringify();
+        
+      }
+      else{}
+      
+};
+    }
+    
+  }
   const cluster = require('cluster');
   const http = require('http');
   const numCPUs = require('os').cpus().length;
